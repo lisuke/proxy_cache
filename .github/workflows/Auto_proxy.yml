@@ -1,0 +1,65 @@
+name: Auto_proxy
+on:
+  workflow_dispatch:
+  schedule:
+    - cron: '15,45 * * * *'
+  push:
+    paths:
+      - '.github/workflows/Auto_proxy.yml'
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    env:
+      GITEE_REPO_URL: ${{ secrets.GITEE_REPO_URL }}
+    steps:
+    - name: 迁出代码
+      uses: actions/checkout@v4
+      with:
+        ref: 'main'
+        token: ${{ secrets.ACCESS_TOKEN }}
+    - name: 设置时区
+      run: sudo timedatectl set-timezone 'Asia/Shanghai'
+    - name: 执行任务
+      run: |
+        git config user.name "lisuke"
+        git config user.email "1657787678@qq.com"
+        
+        branch_name="Auto_proxy"  # 请替换成要检查的分支名称
+        if git show-ref --verify --quiet "refs/heads/$branch_name"; then
+          echo "Branch $branch_name exists."
+          git checkout -m main
+          git checkout -d $branch_name
+        else
+          echo "Branch $branch_name does not exist."
+        fi
+        git checkout --orphan $branch_name
+        rm .github -rf
+        mkdir -p Auto_proxy
+        wget -O Auto_proxy/Long_term_subscription1 https://github.com/w1770946466/Auto_proxy/raw/main/Long_term_subscription1
+        wget -O Auto_proxy/Long_term_subscription2 https://github.com/w1770946466/Auto_proxy/raw/main/Long_term_subscription2
+        wget -O Auto_proxy/Long_term_subscription3 https://github.com/w1770946466/Auto_proxy/raw/main/Long_term_subscription3
+        wget -O Auto_proxy/Long_term_subscription4 https://github.com/w1770946466/Auto_proxy/raw/main/Long_term_subscription4
+        wget -O Auto_proxy/Long_term_subscription5 https://github.com/w1770946466/Auto_proxy/raw/main/Long_term_subscription5
+        wget -O Auto_proxy/Long_term_subscription6 https://github.com/w1770946466/Auto_proxy/raw/main/Long_term_subscription6
+        wget -O Auto_proxy/Long_term_subscription7 https://github.com/w1770946466/Auto_proxy/raw/main/Long_term_subscription7
+        wget -O Auto_proxy/Long_term_subscription8 https://github.com/w1770946466/Auto_proxy/raw/main/Long_term_subscription8
+        wget -O Auto_proxy/Long_term_subscription_num https://github.com/w1770946466/Auto_proxy/raw/main/Long_term_subscription_num
+        wget -O Auto_proxy/Long_term_subscription1.yaml https://github.com/w1770946466/Auto_proxy/raw/main/Long_term_subscription1.yaml
+        wget -O Auto_proxy/Long_term_subscription2.yaml https://github.com/w1770946466/Auto_proxy/raw/main/Long_term_subscription2.yaml
+        wget -O Auto_proxy/Long_term_subscription3.yaml https://github.com/w1770946466/Auto_proxy/raw/main/Long_term_subscription3.yaml
+        
+        git add ./
+        git commit -m "Update file"
+        echo 'git push -uf origin $branch_name:$branch_name'
+        git push -uf origin $branch_name
+        
+    - name: Mirror with force push (git push -f)
+      uses: Yikun/hub-mirror-action@master
+      with:
+        src: github/lisuke
+        dst: gitee/lisuke
+        dst_key: ${{ secrets.GITEE_PRIVATE_KEY }}
+        dst_token: ${{ secrets.GITEE_TOKEN }}
+        static_list: "proxy_cache"
+        force_update: true
+        debug: true

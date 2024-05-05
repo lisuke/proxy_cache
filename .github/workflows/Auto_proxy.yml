@@ -35,18 +35,18 @@ jobs:
         git checkout --orphan $branch_name
         rm .github -rf
         mkdir -p Auto_proxy
-        wget -O Auto_proxy/Long_term_subscription1 https://github.com/w1770946466/Auto_proxy/raw/main/Long_term_subscription1
-        wget -O Auto_proxy/Long_term_subscription2 https://github.com/w1770946466/Auto_proxy/raw/main/Long_term_subscription2
-        wget -O Auto_proxy/Long_term_subscription3 https://github.com/w1770946466/Auto_proxy/raw/main/Long_term_subscription3
-        wget -O Auto_proxy/Long_term_subscription4 https://github.com/w1770946466/Auto_proxy/raw/main/Long_term_subscription4
-        wget -O Auto_proxy/Long_term_subscription5 https://github.com/w1770946466/Auto_proxy/raw/main/Long_term_subscription5
-        wget -O Auto_proxy/Long_term_subscription6 https://github.com/w1770946466/Auto_proxy/raw/main/Long_term_subscription6
-        wget -O Auto_proxy/Long_term_subscription7 https://github.com/w1770946466/Auto_proxy/raw/main/Long_term_subscription7
-        wget -O Auto_proxy/Long_term_subscription8 https://github.com/w1770946466/Auto_proxy/raw/main/Long_term_subscription8
-        wget -O Auto_proxy/Long_term_subscription_num https://github.com/w1770946466/Auto_proxy/raw/main/Long_term_subscription_num
-        wget -O Auto_proxy/Long_term_subscription1.yaml https://github.com/w1770946466/Auto_proxy/raw/main/Long_term_subscription1.yaml
-        wget -O Auto_proxy/Long_term_subscription2.yaml https://github.com/w1770946466/Auto_proxy/raw/main/Long_term_subscription2.yaml
-        wget -O Auto_proxy/Long_term_subscription3.yaml https://github.com/w1770946466/Auto_proxy/raw/main/Long_term_subscription3.yaml
+        wget -O Auto_proxy/Long_term_subscription1 https://github.com/PangTouY00/Auto_proxy/raw/main/Long_term_subscription1
+        wget -O Auto_proxy/Long_term_subscription2 https://github.com/PangTouY00/Auto_proxy/raw/main/Long_term_subscription2
+        wget -O Auto_proxy/Long_term_subscription3 https://github.com/PangTouY00/Auto_proxy/raw/main/Long_term_subscription3
+        wget -O Auto_proxy/Long_term_subscription4 https://github.com/PangTouY00/Auto_proxy/raw/main/Long_term_subscription4
+        wget -O Auto_proxy/Long_term_subscription5 https://github.com/PangTouY00/Auto_proxy/raw/main/Long_term_subscription5
+        wget -O Auto_proxy/Long_term_subscription6 https://github.com/PangTouY00/Auto_proxy/raw/main/Long_term_subscription6
+        wget -O Auto_proxy/Long_term_subscription7 https://github.com/PangTouY00/Auto_proxy/raw/main/Long_term_subscription7
+        wget -O Auto_proxy/Long_term_subscription8 https://github.com/PangTouY00/Auto_proxy/raw/main/Long_term_subscription8
+        wget -O Auto_proxy/Long_term_subscription_num https://github.com/PangTouY00/Auto_proxy/raw/main/Long_term_subscription_num
+        wget -O Auto_proxy/Long_term_subscription1.yaml https://github.com/PangTouY00/Auto_proxy/raw/main/Long_term_subscription1.yaml
+        wget -O Auto_proxy/Long_term_subscription2.yaml https://github.com/PangTouY00/Auto_proxy/raw/main/Long_term_subscription2.yaml
+        wget -O Auto_proxy/Long_term_subscription3.yaml https://github.com/PangTouY00/Auto_proxy/raw/main/Long_term_subscription3.yaml
         
         git add ./
         git commit -m "Update file"

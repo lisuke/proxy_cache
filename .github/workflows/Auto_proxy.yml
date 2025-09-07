@@ -21,8 +21,8 @@ jobs:
       run: sudo timedatectl set-timezone 'Asia/Shanghai'
     - name: 执行任务
       run: |
-        git config user.name "lisuke"
-        git config user.email "1657787678@qq.com"
+        git config user.name $GH_USER
+        git config user.email $GH_EMAIL
         
         branch_name="Auto_proxy"  # 请替换成要检查的分支名称
         if git show-ref --verify --quiet "refs/heads/$branch_name"; then
